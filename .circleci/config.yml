@@ -5,12 +5,12 @@ jobs:
       IMAGE_NAME: kochetov98/provectus-test
     docker:
       - image: circleci/buildpack-deps:stretch
-    working_directory: "~/project/devops/02\ -\ dockerfile"
     steps:
       - checkout
       - setup_remote_docker
       - run:
           name: Build Docker image
+          working_directory: "devops/02\ -\ dockerfile"
           command: |
             ls -lah
             echo $DOCKERHUB_TOKEN | docker login -u kochetov98 --password-stdin

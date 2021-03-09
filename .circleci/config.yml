@@ -12,6 +12,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
+            ls -lah
             echo $DOCKERHUB_TOKEN | docker login -u kochetov98 --password-stdin
             docker build -t $IMAGE_NAME:latest .
 
